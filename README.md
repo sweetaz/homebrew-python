@@ -7,6 +7,7 @@ Python 3.6 + deps for homebrew
 * sphinx-doc 1.7.5
 
 ```
+brew install zlib
 brew install sweetaz/python/openssl@1.0
 brew install sweetaz/python/sphinx-doc@1.7.5
 brew install sweetaz/python/python@3.6

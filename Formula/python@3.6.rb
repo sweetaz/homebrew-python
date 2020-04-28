@@ -123,9 +123,9 @@ class PythonAT36 < Formula
       "do_readline = '#{Formula["readline"].opt_lib}/libhistory.dylib'"
 
     if build.stable?
-      inreplace "setup.py", "/usr/local/ssl", Formula["openssl"].opt_prefix
+      inreplace "setup.py", "/usr/local/ssl", Formula["openssl@1.0"].opt_prefix
     else
-      args << "--with-openssl=#{Formula["openssl"].opt_prefix}"
+      args << "--with-openssl=#{Formula["openssl@1.0"].opt_prefix}"
     end
 
     inreplace "setup.py" do |s|
@@ -277,10 +277,10 @@ class PythonAT36 < Formula
     end
 
     # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl"].opt_include,
-                    Formula["sqlite"].opt_include]
-    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl"].opt_lib,
-                    Formula["sqlite"].opt_lib]
+    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.0"].opt_include,
+                    Formula["sqlite"].opt_include], Formula["zlib"].opt_include]
+    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.0"].opt_lib,
+                    Formula["sqlite"].opt_lib], Formula["zlib"].opt_lib]
 
     if build.with? "tcl-tk"
       include_dirs << Formula["tcl-tk"].opt_include
