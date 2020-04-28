@@ -29,9 +29,9 @@ class PythonAT36 < Formula
   deprecated_option "with-brewed-tk" => "with-tcl-tk"
 
   depends_on "pkg-config" => :build
-  depends_on "sphinx-doc" => :build
+  depends_on "sphinx-doc@1.7.5" => :build
   depends_on "gdbm"
-  depends_on "openssl"
+  depends_on "openssl@1.0"
   depends_on "readline"
   depends_on "sqlite"
   depends_on "xz"
