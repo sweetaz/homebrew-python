@@ -1,2 +1,2 @@
 # homebrew-python
-python 3.6.5
+python 3.6 (3.6.5)
