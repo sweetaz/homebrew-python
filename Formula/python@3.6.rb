@@ -29,9 +29,9 @@ class PythonAT36 < Formula
   deprecated_option "with-brewed-tk" => "with-tcl-tk"
 
   depends_on "pkg-config" => :build
-  depends_on "sphinx-doc@1.7.5" => :build
+  depends_on "sweetaz/python/sphinx-doc@1.7.5" => :build
   depends_on "gdbm"
-  depends_on "openssl@1.0"
+  depends_on "sweetaz/python/openssl@1.0"
   depends_on "readline"
   depends_on "sqlite"
   depends_on "xz"
@@ -283,9 +283,9 @@ class PythonAT36 < Formula
 
     # Help distutils find brewed stuff when building extensions
     include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.0"].opt_include,
-                    Formula["sqlite"].opt_include], Formula["zlib"].opt_include]
+                    Formula["sqlite"].opt_include, Formula["zlib"].opt_include]
     library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.0"].opt_lib,
-                    Formula["sqlite"].opt_lib], Formula["zlib"].opt_lib]
+                    Formula["sqlite"].opt_lib, Formula["zlib"].opt_lib]
 
     if build.with? "tcl-tk"
       include_dirs << Formula["tcl-tk"].opt_include
