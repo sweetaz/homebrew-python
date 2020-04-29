@@ -36,6 +36,7 @@ class PythonAT36 < Formula
   depends_on "sqlite"
   depends_on "xz"
   depends_on "tcl-tk" => :optional
+  depends_on "zlib"
 
   skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6"
   skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6"
