@@ -100,8 +100,8 @@ class PythonAT36 < Formula
     args << "--without-gcc" if ENV.compiler == :clang
 
     cflags   = []
-    ldflags  = []
-    cppflags = []
+    ldflags  = ["-L/usr/local/opt/zlib/lib"]
+    cppflags = ["-I/usr/local/opt/zlib/include"]
 
     unless MacOS::CLT.installed?
       # Help Python's build system (setuptools/pip) to build things on Xcode-only systems
